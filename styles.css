@@ -1,0 +1,474 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #4A90E2 0%, #357ABD 50%, #1E5F99 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #FF4444;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+}
+
+/* Game Container */
+.game-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.turn-indicator {
+    margin-bottom: 30px;
+}
+
+.turn-indicator h2 {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.current-player {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #4A90E2;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+/* Game Board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 300px;
+    margin: 0 auto 30px;
+}
+
+.square {
+    aspect-ratio: 1;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 12px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: #333;
+}
+
+.square:hover {
+    background: #f8f9fa;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.square.x {
+    color: #4A90E2;
+}
+
+.square.o {
+    color: #FF4444;
+}
+
+/* Reset Button */
+.reset-button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.reset-button:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+}
+
+/* Score Section */
+.score-section {
+    background: #FFD700;
+    border: 3px solid #FFA500;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.score-section h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.score-board {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.score-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.score-item.player-x {
+    background: #E3F2FD;
+    border: 2px solid #4A90E2;
+}
+
+.score-item.player-o {
+    background: #FFEBEE;
+    border: 2px solid #FF4444;
+}
+
+.score-item.draws {
+    background: #E8F5E8;
+    border: 2px solid #28a745;
+}
+
+.score-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    width: 40px;
+    text-align: center;
+}
+
+.score-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.player-name {
+    font-size: 1.1rem;
+}
+
+.score-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Instructions Section */
+.instructions-section {
+    background: white;
+    border: 3px solid #FF4444;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.instructions-section h3 {
+    color: #4A90E2;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.instruction-steps {
+    margin-bottom: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.step-number {
+    background: #4A90E2;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.highlight-note {
+    background: #FFF3CD;
+    border: 2px solid #FFD700;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.highlight-icon {
+    font-size: 1.2rem;
+    color: #FF4444;
+}
+
+/* React Concepts Section */
+.concepts-section {
+    background: white;
+    border: 3px solid #28a745;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.concepts-section h3 {
+    color: #FF4444;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.concept-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.concept-card {
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid;
+}
+
+.concept-card.useState {
+    background: #E3F2FD;
+    border-color: #4A90E2;
+}
+
+.concept-card.event-handlers {
+    background: #E8F5E8;
+    border-color: #28a745;
+}
+
+.concept-card.conditional {
+    background: #FFEBEE;
+    border-color: #FF4444;
+}
+
+.concept-card.array-methods {
+    background: #FFF3CD;
+    border-color: #FFD700;
+}
+
+.concept-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.concept-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Tech Stack Section */
+.tech-stack-section {
+    background: white;
+    border: 3px solid #28a745;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.tech-stack-section h3 {
+    color: #28a745;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tech-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.tech-card {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid;
+}
+
+.tech-card.react {
+    background: #E3F2FD;
+    border-color: #4A90E2;
+}
+
+.tech-card.typescript {
+    background: #E8F5E8;
+    border-color: #28a745;
+}
+
+.tech-card.vite {
+    background: #FFF3CD;
+    border-color: #FFD700;
+}
+
+.tech-card.github {
+    background: #FFEBEE;
+    border-color: #FF4444;
+}
+
+.tech-card.web-dev {
+    background: #F3E5F5;
+    border-color: #9C27B0;
+}
+
+.tech-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.tech-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.tech-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background: #FFD700;
+    border: 3px solid #FFA500;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+}
+
+.footer-content h4 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.developer-credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .board {
+        max-width: 250px;
+    }
+    
+    .square {
+        font-size: 2rem;
+    }
+    
+    .concept-cards,
+    .tech-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .score-board {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .board {
+        max-width: 200px;
+    }
+    
+    .square {
+        font-size: 1.5rem;
+    }
+    
+    .game-container,
+    .score-section,
+    .instructions-section,
+    .concepts-section,
+    .tech-stack-section,
+    .footer {
+        padding: 20px;
+    }
+}
